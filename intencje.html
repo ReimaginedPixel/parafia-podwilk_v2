@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intencje · Parafia św. Marcina w Podwilku</title>
+<meta name="description" content="Intencje mszalne na bieżący tydzień w parafii św. Marcina w Podwilku.">
+<meta name="theme-color" content="#33463A">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styl.css">
+</head>
+<body>
+<main id="tresc">
+  <header class="podstrona-glowa">
+    <div class="wrap" data-pojaw>
+      <nav class="okruszki" aria-label="Jesteś tutaj"><a href="index.html">Strona główna</a> / Intencje</nav>
+      <span class="etykieta" style="margin-top:1.4rem">Intencje mszalne</span>
+      <h1>Intencje na ten tydzień</h1>
+      <p>Wybierz dzień, żeby zobaczyć, w jakich intencjach odprawiane są Msze święte. Intencje można zamówić w kancelarii.</p>
+    </div>
+  </header>
+  <section class="wrap ogl-uklad">
+    <div class="kartka" data-intencje data-pojaw></div>
+    <aside data-pojaw style="--opoznienie:.1s">
+      <div class="kontakt-karta"><div data-msze></div></div>
+      <div class="kontakt-karta" style="margin-top:1rem"><div data-kancelaria></div>
+        <p class="uwaga" style="margin:1.2rem 0 0">Intencję na wybrany dzień najlepiej zamówić z wyprzedzeniem, osobiście w kancelarii albo telefonicznie.</p></div>
+    </aside>
+  </section>
+  <div class="rozdarcie rozdarcie--ciemny" aria-hidden="true" style="margin-top:5rem"></div>
+</main>
+<script src="dane/parafia.js"></script>
+<script src="js/uklad.js"></script>
+<script src="js/strona.js"></script>
+</body>
+</html>

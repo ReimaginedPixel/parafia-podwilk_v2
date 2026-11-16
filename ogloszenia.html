@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ogłoszenia · Parafia św. Marcina w Podwilku</title>
+<meta name="description" content="Ogłoszenia duszpasterskie parafii św. Marcina w Podwilku z ostatniej niedzieli i archiwum.">
+<meta name="theme-color" content="#33463A">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styl.css">
+</head>
+<body>
+<main id="tresc">
+  <header class="podstrona-glowa">
+    <div class="wrap" data-pojaw>
+      <nav class="okruszki" aria-label="Jesteś tutaj"><a href="index.html">Strona główna</a> / Ogłoszenia</nav>
+      <span class="etykieta" style="margin-top:1.4rem">Ogłoszenia duszpasterskie</span>
+      <h1>Ogłoszenia</h1>
+      <p>Ogłoszenia czytane w ostatnią niedzielę. Starsze tygodnie znajdziesz niżej, w archiwum.</p>
+    </div>
+  </header>
+  <section class="wrap ogl-uklad">
+    <article class="kartka" data-ogloszenia="pelne" data-pojaw></article>
+    <aside data-pojaw style="--opoznienie:.1s">
+      <div class="kartka" data-intencje></div>
+      <div class="archiwum" style="margin-top:2.5rem">
+        <h2 style="font-size:1.9rem;margin-bottom:.6rem">Archiwum</h2>
+        <div data-archiwum></div>
+      </div>
+    </aside>
+  </section>
+  <div class="rozdarcie rozdarcie--ciemny" aria-hidden="true" style="margin-top:5rem"></div>
+</main>
+<script src="dane/parafia.js"></script>
+<script src="js/uklad.js"></script>
+<script src="js/strona.js"></script>
+</body>
+</html>
