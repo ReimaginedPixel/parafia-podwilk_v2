@@ -46,7 +46,7 @@
       "</div>" +
     "</div></div>" +
     '<header class="naglowek"><div class="wrap">' +
-      '<a class="marka" href="index.html"><img src="assets/svg/logo.svg" alt="" width="40" height="50"><span><b>Parafia św. Marcina</b><small>Podwilk · Orawa</small></span></a>' +
+      '<a class="marka" href="index.html"><span class="marka-luk"><img src="assets/img/logo-parafii.png" alt="" width="250" height="300"></span><span><b>Parafia św. Marcina</b><small>Podwilk · Orawa</small></span></a>' +
       '<nav aria-label="Menu główne">' +
         '<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">' + IKONY.menu + "Menu</button>" +
         '<ul class="menu" id="menu"><li class="menu-zamknij"><button class="menu-btn" type="button" data-zamknij>Zamknij</button></li>' + menu + "</ul>" +
@@ -57,7 +57,7 @@
   var stopka =
     '<footer class="stopka"><div class="wrap">' +
       '<div class="stopka-siatka">' +
-        '<div><a class="marka" href="index.html"><img src="assets/svg/logo.svg" alt="" width="40" height="50"><span><b>Parafia św. Marcina</b><small>Podwilk · od 1687</small></span></a>' +
+        '<div><a class="marka" href="index.html"><span class="marka-luk"><img src="assets/img/logo-parafii.png" alt="" width="250" height="300"></span><span><b>Parafia św. Marcina</b><small>Podwilk · od 1687</small></span></a>' +
           '<p style="margin-top:1rem;max-width:22rem">Rzymskokatolicka parafia na Górnej Orawie, w dekanacie Jabłonka, archidiecezja krakowska.</p></div>' +
         '<div><h3>Kontakt</h3><ul>' +
           "<li>" + P.adres + "</li>" +

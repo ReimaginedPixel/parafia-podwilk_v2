@@ -114,6 +114,7 @@
         lista.innerHTML = '<li style="grid-template-columns:1fr;padding-top:0"><span class="data-mono">' + DNI[d.getDay()] + ", " + ladnaData(d) + "</span></li>" +
           x.msze.map(function (m) { return "<li><b>" + m[0] + "</b><span>" + esc(m[1]) + "</span></li>"; }).join("");
         $$(".dni button", el).forEach(function (b) { b.setAttribute("aria-selected", b.dataset.i == i ? "true" : "false"); });
+        sierotki(lista);
       }
       $$(".dni button", el).forEach(function (b) { b.addEventListener("click", function () { pokaz(+b.dataset.i); }); });
       pokaz(wybrany);
@@ -139,7 +140,7 @@
     el.innerHTML = P.aktualnosci.map(function (a, i) {
       var d = data(a.data);
       return '<a class="karta" href="' + esc(a.link || "#") + '" data-pojaw style="--opoznienie:' + (i * 0.08) + 's">' +
-        '<div class="karta-foto"><span class="brak">' + esc(a.tytul) + "</span>" +
+        '<div class="karta-foto" data-podarte="dol" data-ziarno="' + (31 + i * 7) + '"><span class="brak">' + esc(a.tytul) + "</span>" +
         '<img src="' + esc(a.zdjecie) + '" alt="" loading="lazy" onerror="this.remove()"></div>' +
         '<span class="data-mono">' + d.getDate() + " " + MIES[d.getMonth()] + " " + d.getFullYear() + "</span>" +
         "<h3>" + esc(a.tytul) + "</h3><p>" + esc(a.zajawka) + '</p><span class="kolko">' + I.strzalka + "</span></a>";
@@ -162,7 +163,20 @@
     });
   }
 
+  /* ---------- polska typografia ----------
+     Jednoliterowe słowa (a, i, o, u, w, z) oraz „św.” i „ks.” nie zostają same na końcu linii. */
+  function sierotki(root) {
+    if (!root || !document.createTreeWalker) return;
+    var tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), n, re = /(^|[\s(„])([aiouwzAIOUWZ]|św\.|ks\.)\s+/g;
+    while ((n = tw.nextNode())) {
+      if (/^(SCRIPT|STYLE|TEXTAREA|CODE|PRE)$/.test(n.parentNode.nodeName)) continue;
+      var t = n.nodeValue, nowy = t.replace(re, "$1$2 ").replace(re, "$1$2 ");
+      if (nowy !== t) n.nodeValue = nowy;
+    }
+  }
+
   rysujNajblizsza(); rysujMsze(); rysujOgloszenia(); rysujIntencje(); rysujWydarzenia(); rysujAktualnosci(); rysujKonta();
+  sierotki(document.body);
   setInterval(rysujNajblizsza, 60000);
 
   /* ---------- animacje ---------- */
@@ -177,15 +191,55 @@
     elementy.forEach(function (e) { e.classList.add("widoczny"); });
   }
 
-  /* paralaksa warstw papieru w hero */
-  var warstwy = $$(".hero-warstwy .warstwa");
-  if (warstwy.length && ruch) {
+  /* ---------- podarty papier ----------
+     Każde zdjęcie z data-podarte dostaje własną, losową krawędź, jak prawdziwie podarta kartka.
+     data-podarte="dol" podziera tylko dół, "wszystkie" wszystkie boki. data-ziarno ustala wzór. */
+  function los(ziarno) {
+    var s = (ziarno * 9301 + 49297) % 233280;
+    return function () { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+  }
+  function krawedz(dl, amp, r) {
+    var pkt = [], n = Math.max(8, Math.round(dl / 9)), faza = r() * 6;
+    for (var i = 0; i <= n; i++) {
+      var t = i / n;
+      var fala = 0.5 + 0.5 * Math.sin(t * 9 + faza) * Math.sin(t * 2.3 + faza * 1.7);
+      pkt.push([t, Math.max(0, amp * (0.35 + 0.65 * fala) + (r() - 0.5) * amp * 0.9)]);
+    }
+    return pkt;
+  }
+  function podrzyj(el) {
+    var w = el.offsetWidth, h = el.offsetHeight;
+    if (!w || !h) return;
+    var tryb = el.getAttribute("data-podarte") || "dol";
+    var r = los(+el.getAttribute("data-ziarno") || 1);
+    var wsz = tryb === "wszystkie";
+    var amp = Math.min(10, Math.max(5, Math.min(w, h) * 0.022));
+    function px(x) { return (x / w * 100).toFixed(2) + "%"; }
+    function py(y) { return (y / h * 100).toFixed(2) + "%"; }
+    var p = [];
+    if (wsz) krawedz(w, amp, r).forEach(function (k) { p.push(px(k[0] * w) + " " + py(k[1])); });
+    else p.push("0 0", "100% 0");
+    if (wsz) krawedz(h, amp * 0.8, r).forEach(function (k) { p.push(px(w - k[1]) + " " + py(k[0] * h)); });
+    krawedz(w, amp * 1.25, r).forEach(function (k) { p.push(px(w - k[0] * w) + " " + py(h - k[1])); });
+    if (wsz) krawedz(h, amp * 0.8, r).forEach(function (k) { p.push(px(k[1]) + " " + py(h - k[0] * h)); });
+    el.style.setProperty("--podarte", "polygon(" + p.join(",") + ")");
+  }
+  function podrzyjWszystko() { $$("[data-podarte]").forEach(podrzyj); }
+  podrzyjWszystko();
+  window.addEventListener("load", podrzyjWszystko);
+  var czekaj;
+  window.addEventListener("resize", function () { clearTimeout(czekaj); czekaj = setTimeout(podrzyjWszystko, 150); });
+
+  /* ---------- paralaksa warstw kolażu w nagłówku ---------- */
+  var warstwy = $$(".kolaz [data-glebia]");
+  if (warstwy.length && ruch && "translate" in document.documentElement.style) {
     var tik = false;
     window.addEventListener("scroll", function () {
-      if (tik) return; tik = true;
+      if (tik) return;
+      tik = true;
       requestAnimationFrame(function () {
         var y = Math.min(window.scrollY, 900);
-        warstwy.forEach(function (w) { w.style.transform = "translate3d(0," + (y * (+w.dataset.glebia || 0)) + "px,0)"; });
+        warstwy.forEach(function (w) { w.style.translate = "0 " + (y * (+w.dataset.glebia || 0)).toFixed(1) + "px"; });
         tik = false;
       });
     }, { passive: true });

@@ -41,12 +41,21 @@ Strona sama zaznacza dzisiejszy dzień.
 ## Zdjęcia
 
 Wrzuć plik do `assets/img/` i wpisz jego nazwę, np. `zdjecie: "assets/img/odpust-2026.jpg"`.
+Zdjęcie z telefonu najlepiej zmniejszyć do około 1600 px szerokości (np. w Canvie albo w Paint), żeby strona ładowała się szybko.
 
-| Plik | Gdzie się pokazuje | Skąd |
-| --- | --- | --- |
-| `assets/img/sw-marcin.jpg` | sekcja „Nasz patron” | ilustracja z Canvy (pobierz w pełnej rozdzielczości) |
+Zdjęcia na stałe wbudowane w wygląd strony:
 
-Dopóki pliku nie ma, w tym miejscu widać rysunek kościoła, więc strona nigdy nie ma „dziury”.
+| Plik | Gdzie się pokazuje |
+| --- | --- |
+| `nawa.webp` | kolaż na stronie głównej, galeria w historii |
+| `ambona.webp` | wycięta ambona w kolażu (Canva, usunięte tło) |
+| `oltarz-glowny.webp`, `ambona-foto.webp`, `pieta-foto.webp`, `organy.webp` | sekcja „Nasz kościół” i galeria |
+| `tablica-1715.webp` | galeria w historii |
+| `kartusz.webp` | historia, obok osi czasu (Canva, usunięte tło) |
+| `logo-parafii.png` | logo w nagłówku i stopce, sekcja „Nasz patron” |
+
+Żeby podmienić zdjęcie, wystarczy wgrać nowy plik pod tą samą nazwą.
+Wycięcia z przezroczystym tłem robi się w Canvie: Edytuj zdjęcie → Usuń tło, potem pobierz jako PNG z przezroczystym tłem.
 
 ## Najczęstszy błąd
 
