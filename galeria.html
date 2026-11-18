@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galeria · Parafia św. Marcina w Podwilku</title>
+<meta name="description" content="Zdjęcia z życia parafii św. Marcina w Podwilku: odpusty, peregrynacja ikony Świętej Rodziny, szopki, wizyta św. Mikołaja i wnętrze kościoła.">
+<meta name="theme-color" content="#2F231D">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/ikona-180.png">
+<link rel="stylesheet" href="css/styl.css">
+</head>
+<body>
+<main id="tresc">
+  <header class="podstrona-glowa podstrona-glowa--foto" data-galeria-glowa>
+    <div class="wrap glowa-siatka">
+      <div data-pojaw>
+        <nav class="okruszki" aria-label="Jesteś tutaj"><a href="index.html">Strona główna</a> / Galeria</nav>
+        <span class="etykieta" style="margin-top:1.4rem" data-galeria-razem>Albumy ze zdjęciami</span>
+        <h1>Galeria</h1>
+        <p>Odpusty, peregrynacja ikony, szopki i wizyty gości. Wybierz album, a potem kliknij zdjęcie, żeby je powiększyć.</p>
+      </div>
+      <div class="odbitki odbitki--wachlarz" data-galeria-skrot="odpust-2021,peregrynacja-2022,szopka-2020"></div>
+    </div>
+  </header>
+
+  <section class="sekcja" id="albumy" style="padding-top:1.5rem" aria-label="Albumy">
+    <div class="wrap">
+      <div class="albumy" data-albumy></div>
+    </div>
+  </section>
+
+  <section class="album-widok" data-album hidden></section>
+
+  <div class="rozdarcie rozdarcie--ciemny" aria-hidden="true" style="margin-top:4rem"></div>
+</main>
+<script src="dane/parafia.js"></script>
+<script src="dane/galeria.js"></script>
+<script src="js/uklad.js"></script>
+<script src="js/galeria.js"></script>
+<script src="js/strona.js"></script>
+</body>
+</html>

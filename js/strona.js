@@ -230,6 +230,22 @@
   var czekaj;
   window.addEventListener("resize", function () { clearTimeout(czekaj); czekaj = setTimeout(podrzyjWszystko, 150); });
 
+  /* ---------- treści dorysowane później (np. album w galerii) ---------- */
+  window.PARAFIA_UI = {
+    odswiez: function (root) {
+      if (!root) return;
+      sierotki(root);
+      $$("[data-podarte]", root).forEach(podrzyj);
+      $$("[data-pojaw]:not(.widoczny)", root).forEach(function (e) { if (io) io.observe(e); else e.classList.add("widoczny"); });
+    }
+  };
+
+  /* ---------- zapasowe zdjęcie ----------
+     Gdy mniejsza wersja zdjęcia się nie wczyta, bierzemy pełne zdjęcie z data-pelny. */
+  function zapasowe(im) { var p = im.getAttribute("data-pelny"); if (p) { im.removeAttribute("data-pelny"); im.src = p; } }
+  document.addEventListener("error", function (e) { if (e.target && e.target.tagName === "IMG") zapasowe(e.target); }, true);
+  $$("img[data-pelny]").forEach(function (im) { if (im.complete && !im.naturalWidth) zapasowe(im); });
+
   /* ---------- paralaksa warstw kolażu w nagłówku ---------- */
   var warstwy = $$(".kolaz [data-glebia]");
   if (warstwy.length && ruch && "translate" in document.documentElement.style) {

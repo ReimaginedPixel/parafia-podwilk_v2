@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Parafia św. Marcina w Podwilku</title>
 <meta name="description" content="Parafia rzymskokatolicka św. Marcina w Podwilku na Orawie. Godziny Mszy świętych, ogłoszenia duszpasterskie, intencje, sakramenty i kontakt z kancelarią.">
-<meta name="theme-color" content="#33463A">
+<meta name="theme-color" content="#2F231D">
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/ikona-180.png">
 <link rel="preload" href="assets/fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -83,7 +83,7 @@
           <span class="etykieta">Kalendarz</span>
           <h2 id="wyd-tytul">Najbliższe wydarzenia</h2>
         </div>
-        <p style="color:#CFC6B2">Uroczystości, nabożeństwa i spotkania, na które serdecznie zapraszamy.</p>
+        <p>Uroczystości, nabożeństwa i spotkania, na które serdecznie zapraszamy.</p>
       </div>
       <div class="wydarzenia" data-wydarzenia></div>
     </div>
@@ -104,8 +104,26 @@
     </div>
   </section>
 
+  <!-- ================= GALERIA ================= -->
+  <div class="rozdarcie rozdarcie--kraft" aria-hidden="true"></div>
+  <section class="sekcja sekcja--kraft" aria-labelledby="gal-tytul">
+    <div class="galeria-kolo" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="sekcja-glowa" data-pojaw>
+        <div>
+          <span class="etykieta">Galeria</span>
+          <h2 id="gal-tytul">Parafia na zdjęciach</h2>
+        </div>
+        <p><b data-galeria-razem>Kilkaset zdjęć</b> z odpustów, peregrynacji ikony, szopek i wizyt gości.</p>
+      </div>
+      <div class="odbitki" data-galeria-skrot="relikwie-2026,odpust-2021,peregrynacja-2022,danielki-2020,szopka-2020,sw-anna-2021"></div>
+      <p class="odbitki-dol" data-pojaw><a class="btn" href="galeria.html">Zobacz wszystkie albumy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></p>
+    </div>
+  </section>
+  <div class="rozdarcie rozdarcie--kraft rozdarcie--gora" aria-hidden="true"></div>
+
   <!-- ================= NASZ KOŚCIÓŁ ================= -->
-  <section class="sekcja" style="padding-top:0" aria-labelledby="kos-tytul">
+  <section class="sekcja" aria-labelledby="kos-tytul">
     <div class="wrap">
       <div class="sekcja-glowa" data-pojaw>
         <div>
@@ -216,7 +234,9 @@
 </main>
 
 <script src="dane/parafia.js"></script>
+<script src="dane/galeria.js"></script>
 <script src="js/uklad.js"></script>
+<script src="js/galeria.js"></script>
 <script src="js/strona.js"></script>
 </body>
 </html>

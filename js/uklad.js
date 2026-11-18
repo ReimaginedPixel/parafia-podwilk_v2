@@ -20,6 +20,7 @@
     ["intencje.html", "Intencje"],
     ["sakramenty.html", "Sakramenty"],
     ["historia.html", "Historia"],
+    ["galeria.html", "Galeria"],
     ["kontakt.html", "Kontakt"]
   ];
   var tu = (location.pathname.split("/").pop() || "index.html");
@@ -94,6 +95,20 @@
   function cien() { nag.classList.toggle("przewiniety", window.scrollY > 10); }
   window.addEventListener("scroll", cien, { passive: true }); cien();
 
+  /* gdy pełne menu się nie mieści (wąski ekran albo większy tekst), pokazujemy przycisk „Menu” */
+  var ulMenu = document.querySelector(".menu"), wrapNag = nag.querySelector(".wrap"), html = document.documentElement;
+  function dopasujMenu() {
+    html.classList.remove("menu-waskie");
+    var waskie = window.innerWidth <= 960 || ulMenu.scrollWidth > ulMenu.clientWidth + 1 ||
+      ulMenu.getBoundingClientRect().right > wrapNag.getBoundingClientRect().right + 1;
+    html.classList.toggle("menu-waskie", waskie);
+    if (!waskie) przelacz(false);
+  }
+  var czekajMenu;
+  window.addEventListener("resize", function () { clearTimeout(czekajMenu); czekajMenu = setTimeout(dopasujMenu, 100); });
+  window.addEventListener("load", dopasujMenu);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(dopasujMenu);
+
   /* ułatwienia dostępu, zapamiętywane w przeglądarce */
   function zapisz(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   function wczytaj(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
@@ -102,6 +117,7 @@
     root.style.setProperty("--skala", s);
     document.querySelectorAll("[data-skala]").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.skala === s ? "true" : "false"); });
     zapisz("skala", s);
+    dopasujMenu();
   }
   function ustawKontrast(on) {
     if (on) root.setAttribute("data-kontrast", "wysoki"); else root.removeAttribute("data-kontrast");

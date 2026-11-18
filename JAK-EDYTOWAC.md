@@ -54,8 +54,39 @@ Zdjęcia na stałe wbudowane w wygląd strony:
 | `kartusz.webp` | historia, obok osi czasu (Canva, usunięte tło) |
 | `logo-parafii.png` | logo w nagłówku i stopce, sekcja „Nasz patron” |
 
+Zdjęcia w nagłówkach Ogłoszeń, Intencji i Sakramentów są na razie wczytywane z obecnej strony parafii
+(adres jest wpisany w danym pliku `.html`, w `<figure class="glowa-foto">`).
+
 Żeby podmienić zdjęcie, wystarczy wgrać nowy plik pod tą samą nazwą.
 Wycięcia z przezroczystym tłem robi się w Canvie: Edytuj zdjęcie → Usuń tło, potem pobierz jako PNG z przezroczystym tłem.
+
+## Galeria: nowy album
+
+Albumy są w osobnym pliku: `dane/galeria.js`. Najnowszy album wpisz na górze listy (pod „Wnętrzem kościoła”).
+
+1. Wgraj zdjęcia do nowego folderu, np. `assets/galeria/odpust-2026/`.
+2. Skopiuj w `dane/galeria.js` jeden blok od `{` do `},` i zmień go:
+
+```js
+{
+  "slug": "odpust-2026",
+  "tytul": "Odpust Matki Bożej Anielskiej",
+  "data": "2026-08-02",
+  "opis": "Krótki opis albumu.",
+  "folder": "assets/galeria/odpust-2026/",
+  "zdjecia": ["01.jpg", "02.jpg", "03.jpg"],
+  "okladka": 0
+},
+```
+
+- `slug` to krótka nazwa w adresie (bez polskich liter i spacji), np. `galeria.html#album=odpust-2026`.
+- `okladka` to numer zdjęcia na okładce, liczony od zera (0 to pierwsze zdjęcie).
+- Zamiast daty można wpisać własny opis czasu: `"kiedy": "Wielki Post 2026"`.
+- Podpisy pod zdjęciami (nieobowiązkowe): `"podpisy": ["Procesja", "Ołtarz", "Orkiestra"]`.
+
+Licznik „582 zdjęcia w 11 albumach”, okładki i strony albumów zrobią się same.
+Na stronie głównej są odbitki z sześciu albumów. Które to albumy, ustawia się w `index.html`,
+w atrybucie `data-galeria-skrot` (nazwy `slug` oddzielone przecinkami).
 
 ## Najczęstszy błąd
 

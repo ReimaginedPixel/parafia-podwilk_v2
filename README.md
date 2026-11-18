@@ -6,12 +6,18 @@ Projekt i wykonanie: [konradkukula.dev](https://konradkukula.dev).
 ## Co jest w środku
 
 - **Strona główna** z kolażem z prawdziwych zdjęć kościoła: podarte zdjęcie nawy, wycięta czarno-biała ambona, terakotowe koło i ukośna siatka, notatki jak w szkicowniku.
+- **Kolory z konceptu TERRA**: kremowy papier, terakota, cegła, ochra i ciemny brąz.
+- **Galeria** (`galeria.html`): 11 albumów i 582 zdjęcia z obecnej strony parafii. Okładka albumu z trzech kadrów,
+  stykówka miniatur, powiększanie zdjęć ze strzałkami, klawiaturą i przesuwaniem palcem, linki do poprzedniego i następnego albumu.
+- **Parafia na zdjęciach** na stronie głównej: odbitki z sześciu albumów przyklejone taśmą, na pasku papieru pakowego.
+- **Nagłówki podstron ze zdjęciami**: podarte zdjęcie na terakotowym kole, jak w kolażu na stronie głównej.
 - **Nasz kościół**: ołtarz główny, ambona, Pieta i organy na zdjęciach z archiwum parafii, a na stronie historii galeria wnętrza.
 - **Najbliższa Msza na żywo**: strona sama liczy, która Msza jest najbliższa i za ile się zaczyna.
 - **Ogłoszenia i intencje** na pierwszym ekranie, intencje z wyborem dnia (dzisiejszy zaznaczony).
 - **Sakramenty krok po kroku**: rozwijane listy dokumentów do kancelarii.
 - **Historia, kontakt, numery kont** z kopiowaniem jednym kliknięciem.
 - **Dostępność**: większy tekst (A, A+, A++), tryb wysokiego kontrastu, obsługa klawiaturą, poszanowanie ustawienia „ogranicz ruch”.
+  Gdy przy większym tekście menu się nie mieści, zamienia się w przycisk „Menu”.
 - Delikatne animacje przy przewijaniu i lekka paralaksa warstw kolażu.
 - Polska typografia: jednoliterowe słowa („w”, „z”, „i”) nie zostają same na końcu linii.
 
@@ -22,6 +28,10 @@ Wycięcia (ambona, ołtarz z Pietą, kartusz z malowidłem, logo z rysunkiem ko�
 przez usunięcie tła, a potem tylko przycięte, zmniejszone i zapisane jako WebP.
 Na obecnej stronie nie ma zdjęcia kościoła z zewnątrz, dlatego na zewnątrz kościół pokazuje rysunek z logo parafii.
 Dobre zdjęcie elewacji (najlepiej w słoneczny dzień) można później podmienić w jednym miejscu.
+
+Zdjęcia w galerii, w nagłówkach podstron i w aktualnościach są na razie wczytywane prosto z obecnej strony parafii
+(miniatury 150 × 150, które WordPress już ma, a po kliknięciu pełne zdjęcie). Jeśli jakaś miniatura się nie wczyta,
+strona sama bierze pełne zdjęcie. Przy wdrożeniu zdjęcia zostaną skopiowane na nowy serwer razem z lekkimi miniaturami.
 
 ## Uruchomienie
 
@@ -41,10 +51,12 @@ Wszystko, co zmienia się co tydzień, jest w `dane/parafia.js`. Instrukcja: [JA
 ## Struktura
 
 ```
-index.html, ogloszenia.html, intencje.html, sakramenty.html, historia.html, kontakt.html
+index.html, ogloszenia.html, intencje.html, sakramenty.html, historia.html, galeria.html, kontakt.html
 dane/parafia.js      treści (ogłoszenia, intencje, godziny, wydarzenia, konta)
+dane/galeria.js      albumy w galerii (tytuł, data, folder, lista zdjęć)
 js/uklad.js          wspólny nagłówek, stopka, menu, ułatwienia dostępu
 js/strona.js         wypełnianie treści, najbliższa Msza, animacje
+js/galeria.js        lista albumów, widok albumu, powiększanie zdjęć, odbitki na stronie głównej
 css/styl.css         wygląd
 assets/img/          zdjęcia i wycięcia z Canvy (WebP), logo parafii
 assets/svg/          podarta krawędź sekcji (rozdarcie.svg)

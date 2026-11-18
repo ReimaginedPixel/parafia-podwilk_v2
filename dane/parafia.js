@@ -93,7 +93,7 @@ window.PARAFIA = {
   aktualnosci: [
     { data: "2026-10-16", tytul: "Pielgrzymka do Francji 2027", zajawka: "Zapraszamy na parafialną pielgrzymkę do sanktuariów Francji. Program i zapisy w kancelarii.", zdjecie: "https://parafia-podwilk.pl/wp-content/uploads/2026/10/image005.jpg", link: "https://parafia-podwilk.pl/pielgrzymka-do-francji-2027/" },
     { data: "2026-10-01", tytul: "Różaniec z Matką Bożą z Luján", zajawka: "Październikowe nabożeństwa różańcowe w naszym kościele.", zdjecie: "https://parafia-podwilk.pl/wp-content/uploads/2026/10/rozaniec-2026-768x1024.jpg", link: "https://parafia-podwilk.pl/rozaniec-2026-z-matka-boza-z-lujan/" },
-    { data: "2026-06-13", tytul: "Danielki", zajawka: "Zaproszenie dla dzieci i rodziców.", zdjecie: "https://parafia-podwilk.pl/wp-content/uploads/2026/06/danielki-724x1024.jpg", link: "https://parafia-podwilk.pl/danielki/" },
+    { data: "2026-06-13", tytul: "Odpust na Danielkach", zajawka: "Zaproszenie na odpust ku czci Matki Bożej Siedmiobolesnej, Patronki Orawy.", zdjecie: "https://parafia-podwilk.pl/wp-content/uploads/2026/06/danielki-724x1024.jpg", link: "https://parafia-podwilk.pl/danielki/" },
     { data: "2026-04-25", tytul: "Relikwie bł. Zofii Czeskiej", zajawka: "Uroczyste wprowadzenie relikwii do naszej świątyni.", zdjecie: "https://parafia-podwilk.pl/wp-content/uploads/2026/04/IMG-20260427-WA00001-1024x768.jpg", link: "https://parafia-podwilk.pl/wprowadzenie-relikwii-bl-zofii-czeskiej/" }
   ],
 
