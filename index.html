@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parafia św. Marcina w Podwilku</title>
+<meta name="description" content="Parafia rzymskokatolicka św. Marcina w Podwilku na Orawie. Godziny Mszy świętych, ogłoszenia duszpasterskie, intencje, sakramenty i kontakt z kancelarią.">
+<meta name="theme-color" content="#2F231D">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/ikona-180.png">
+<link rel="preload" href="assets/fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/styl.css">
+</head>
+<body>
+
+<main id="tresc">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" aria-labelledby="tytul">
+    <div class="wrap hero-siatka">
+      <div class="hero-tresc">
+        <span class="etykieta etykieta--gwiazdka">Parafia rzymskokatolicka<span class="ukryj-waskie">&nbsp;· Podwilk</span></span>
+        <h1 id="tytul">Parafia <em>św. Marcina</em> w Podwilku</h1>
+        <p class="wstep">Wspólnota wiary pod Babią Górą. Godziny Mszy, ogłoszenia i intencje zawsze w jednym miejscu.</p>
+        <div class="hero-akcje">
+          <a class="btn" href="#ogloszenia">Ogłoszenia na ten tydzień <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--jasny" href="intencje.html">Intencje mszalne</a>
+        </div>
+        <p class="hero-wsp" aria-hidden="true"><span>49° 33′ N</span><span>19° 44′ E</span><span>Górna Orawa</span></p>
+      </div>
+
+      <!-- Kolaż z prawdziwych zdjęć kościoła (wycięcia zrobione w Canvie) -->
+      <div class="kolaz" aria-hidden="true">
+        <div class="kolaz-siatka" data-glebia="0.03"></div>
+        <div class="kolaz-kolo" data-glebia="0.08"></div>
+        <div class="kolaz-kolo kolaz-kolo--male" data-glebia="0.12"></div>
+        <figure class="kolaz-foto" data-glebia="-0.04">
+          <div class="papier" data-podarte="wszystkie" data-ziarno="11">
+            <img src="assets/img/nawa.webp" alt="" width="1300" height="867" data-podarte="wszystkie" data-ziarno="23">
+          </div>
+        </figure>
+        <img class="kolaz-ambona" src="assets/img/ambona.webp" alt="" width="355" height="867" data-glebia="-0.1">
+        <p class="kolaz-notka kolaz-notka--ambona"><b>Ambona</b>wnętrze kościoła</p>
+        <p class="kolaz-notka kolaz-notka--nawa"><b>Nawa główna</b>fot. archiwum parafii</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SZYBKIE INFORMACJE ================= -->
+  <div class="wrap">
+    <section class="najblizsza" aria-label="Najważniejsze informacje" data-pojaw>
+      <div data-najblizsza></div>
+      <div data-msze></div>
+      <div data-kancelaria></div>
+      <div data-kontakt-skrot></div>
+    </section>
+  </div>
+
+  <!-- ================= OGŁOSZENIA I INTENCJE ================= -->
+  <section class="sekcja" id="ogloszenia" aria-labelledby="ogl-tytul">
+    <div class="wrap">
+      <div class="sekcja-glowa" data-pojaw>
+        <div>
+          <span class="etykieta">Co słychać w parafii</span>
+          <h2 id="ogl-tytul">Ogłoszenia i intencje</h2>
+        </div>
+        <p>Ogłoszenia z ostatniej niedzieli i intencje na cały tydzień. Kliknij dzień, żeby zobaczyć jego Msze.</p>
+      </div>
+      <div class="ogl-uklad">
+        <article class="kartka" data-ogloszenia="skrot" data-pojaw></article>
+        <aside class="kartka" data-intencje data-pojaw style="--opoznienie:.12s"></aside>
+      </div>
+      <p style="margin-top:1.6rem" data-pojaw><a class="link-strzalka" href="ogloszenia.html">Archiwum ogłoszeń <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></p>
+    </div>
+  </section>
+
+  <!-- ================= WYDARZENIA ================= -->
+  <div class="rozdarcie" aria-hidden="true"></div>
+  <section class="sekcja sekcja--ciemna" aria-labelledby="wyd-tytul">
+    <div class="wrap">
+      <div class="sekcja-glowa" data-pojaw>
+        <div>
+          <span class="etykieta">Kalendarz</span>
+          <h2 id="wyd-tytul">Najbliższe wydarzenia</h2>
+        </div>
+        <p>Uroczystości, nabożeństwa i spotkania, na które serdecznie zapraszamy.</p>
+      </div>
+      <div class="wydarzenia" data-wydarzenia></div>
+    </div>
+  </section>
+  <div class="rozdarcie rozdarcie--gora" aria-hidden="true"></div>
+
+  <!-- ================= AKTUALNOŚCI ================= -->
+  <section class="sekcja" aria-labelledby="akt-tytul">
+    <div class="wrap">
+      <div class="sekcja-glowa" data-pojaw>
+        <div>
+          <span class="etykieta">Z życia parafii</span>
+          <h2 id="akt-tytul">Aktualności</h2>
+        </div>
+        <p>Pielgrzymki, nabożeństwa i ważne chwile naszej wspólnoty.</p>
+      </div>
+      <div class="karty karty--lista" data-aktualnosci></div>
+    </div>
+  </section>
+
+  <!-- ================= GALERIA ================= -->
+  <div class="rozdarcie rozdarcie--kraft" aria-hidden="true"></div>
+  <section class="sekcja sekcja--kraft" aria-labelledby="gal-tytul">
+    <div class="galeria-kolo" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="sekcja-glowa" data-pojaw>
+        <div>
+          <span class="etykieta">Galeria</span>
+          <h2 id="gal-tytul">Parafia na zdjęciach</h2>
+        </div>
+        <p><b data-galeria-razem>Kilkaset zdjęć</b> z odpustów, peregrynacji ikony, szopek i wizyt gości.</p>
+      </div>
+      <div class="odbitki" data-galeria-skrot="relikwie-2026,odpust-2021,peregrynacja-2022,danielki-2020,szopka-2020,sw-anna-2021"></div>
+      <p class="odbitki-dol" data-pojaw><a class="btn" href="galeria.html">Zobacz wszystkie albumy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></p>
+    </div>
+  </section>
+  <div class="rozdarcie rozdarcie--kraft rozdarcie--gora" aria-hidden="true"></div>
+
+  <!-- ================= NASZ KOŚCIÓŁ ================= -->
+  <section class="sekcja" aria-labelledby="kos-tytul">
+    <div class="wrap">
+      <div class="sekcja-glowa" data-pojaw>
+        <div>
+          <span class="etykieta">Nasz kościół</span>
+          <h2 id="kos-tytul">Miejsca, które warto zobaczyć</h2>
+        </div>
+        <p>Wnętrze kościoła św. Marcina na zdjęciach z archiwum parafii.</p>
+      </div>
+      <div class="karty karty--kosciol">
+        <a class="karta" href="historia.html#wnetrze" data-pojaw>
+          <div class="karta-foto" data-podarte="dol" data-ziarno="3"><img src="assets/img/oltarz-glowny.webp" alt="Ołtarz główny podczas odpustu Matki Bożej Anielskiej" loading="lazy" width="1600" height="1200"></div>
+          <span class="data-mono">Prezbiterium</span>
+          <h3>Ołtarz główny</h3>
+          <p>Na zdjęciu odpust Matki Bożej Anielskiej, 2 sierpnia 2021.</p>
+          <span class="kolko"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="karta" href="historia.html#wnetrze" data-pojaw style="--opoznienie:.08s">
+          <div class="karta-foto" data-podarte="dol" data-ziarno="5"><img src="assets/img/ambona-foto.webp" alt="Zdobiona ambona z baldachimem w nawie kościoła" loading="lazy" width="1300" height="867" style="object-position:72% 50%"></div>
+          <span class="data-mono">Nawa</span>
+          <h3>Ambona</h3>
+          <p>Bogato zdobiona ambona z baldachimem.</p>
+          <span class="kolko"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="karta" href="historia.html#wnetrze" data-pojaw style="--opoznienie:.16s">
+          <div class="karta-foto" data-podarte="dol" data-ziarno="7"><img src="assets/img/pieta-foto.webp" alt="Boczny ołtarz z Pietą i figurami świętych" loading="lazy" width="1300" height="867"></div>
+          <span class="data-mono">Ołtarz boczny</span>
+          <h3>Pieta</h3>
+          <p>Boczny ołtarz z Pietą i figurami świętych.</p>
+          <span class="kolko"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="karta" href="historia.html#wnetrze" data-pojaw style="--opoznienie:.24s">
+          <div class="karta-foto" data-podarte="dol" data-ziarno="9"><img src="assets/img/organy.webp" alt="Organy na chórze kościoła" loading="lazy" width="1300" height="867"></div>
+          <span class="data-mono">Chór</span>
+          <h3>Organy</h3>
+          <p>Organy na chórze muzycznym.</p>
+          <span class="kolko"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SAKRAMENTY ================= -->
+  <section class="sekcja" style="padding-top:0" aria-labelledby="sak-tytul">
+    <div class="wrap">
+      <div class="sekcja-glowa" data-pojaw>
+        <div>
+          <span class="etykieta">Sprawy w kancelarii</span>
+          <h2 id="sak-tytul">Sakramenty krok po kroku</h2>
+        </div>
+        <p>Jakie dokumenty przygotować i kiedy się zgłosić. Wszystko na jednej stronie, bez dzwonienia.</p>
+      </div>
+      <div class="sakramenty">
+        <a class="sakrament" href="sakramenty.html#chrzest" data-pojaw>
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6c-8 9-12 15-12 21a12 12 0 0 0 24 0c0-6-4-12-12-21z"/><path d="M18 29a6 6 0 0 0 6 6"/></svg>
+          <h3>Chrzest</h3><p>Zgłoszenie co najmniej dwa tygodnie wcześniej.</p>
+        </a>
+        <a class="sakrament" href="sakramenty.html#malzenstwo" data-pojaw style="--opoznienie:.08s">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="28" r="10"/><circle cx="30" cy="28" r="10"/><path d="M27 10l3-4 3 4-3 3z"/></svg>
+          <h3>Małżeństwo</h3><p>Dokumenty na trzy miesiące przed ślubem.</p>
+        </a>
+        <a class="sakrament" href="sakramenty.html#namaszczenie" data-pojaw style="--opoznienie:.16s">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6h8v6h-8z"/><path d="M18 12h12l3 8v18a4 4 0 0 1-4 4H19a4 4 0 0 1-4-4V20z"/><path d="M24 24v10M19 29h10"/></svg>
+          <h3>Namaszczenie chorych</h3><p>Odwiedziny w pierwszy piątek i sobotę miesiąca.</p>
+        </a>
+        <a class="sakrament" href="sakramenty.html#pogrzeb" data-pojaw style="--opoznienie:.24s">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6c-3 4-3 7 0 9 3-2 3-5 0-9z"/><path d="M19 18h10v22H19z"/><path d="M14 42h20"/></svg>
+          <h3>Pogrzeb</h3><p>Co zabrać do kancelarii i jak ustalić termin.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PATRON ================= -->
+  <section class="sekcja" style="padding-top:0" aria-labelledby="pat-tytul">
+    <div class="wrap patron">
+      <figure class="patron-obraz kolko-tlo" data-pojaw style="margin:0">
+        <div class="kolaz-siatka"></div>
+        <div class="kolaz-kolo"></div>
+        <img src="assets/img/logo-parafii.png" alt="Kościół św. Marcina w Podwilku, rysunek z logo parafii" loading="lazy" width="250" height="300">
+        <figcaption class="data-mono">Kościół św. Marcina · rysunek z logo parafii</figcaption>
+      </figure>
+      <div data-pojaw style="--opoznienie:.12s">
+        <span class="etykieta">Nasz patron</span>
+        <h2 id="pat-tytul">Święty Marcin z Tours</h2>
+        <blockquote>Żołnierz, który oddał połowę płaszcza ubogiemu, a potem został biskupem i pasterzem.</blockquote>
+        <p>Odpust parafialny przeżywamy w listopadzie, w uroczystość naszego patrona. Opiekę nad parafią powierzamy także Matce Bożej Anielskiej i Matce Bożej Bolesnej. W naszym kościele modlą się też czciciele św. Rity.</p>
+        <div class="patroni-inni"><span>Matka Boża Anielska</span><span>Matka Boża Bolesna</span><span>Św. Rita</span></div>
+        <p style="margin-top:1.6rem"><a class="link-strzalka" href="historia.html">Historia parafii <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WSPARCIE ================= -->
+  <section class="sekcja" style="padding-top:0" aria-labelledby="wsp-tytul">
+    <div class="wrap">
+      <div class="sekcja-glowa" data-pojaw>
+        <div>
+          <span class="etykieta">Bóg zapłać</span>
+          <h2 id="wsp-tytul">Wesprzyj parafię</h2>
+        </div>
+        <p>Obecnie zbieramy na nowe ławy w kościele. Numer konta skopiujesz jednym kliknięciem.</p>
+      </div>
+      <div class="konta" data-konta></div>
+    </div>
+  </section>
+
+  <div class="rozdarcie rozdarcie--ciemny" aria-hidden="true"></div>
+</main>
+
+<script src="dane/parafia.js"></script>
+<script src="dane/galeria.js"></script>
+<script src="js/uklad.js"></script>
+<script src="js/galeria.js"></script>
+<script src="js/strona.js"></script>
+</body>
+</html>
